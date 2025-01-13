@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>bikin batu kertas gunting</title>
+  </head>
+
+  <body>
+    <p>Batu Kertas Gunting</p>
+
+    <button
+      onclick="
+      playGame('batu');
+    "
+    >
+      Batu
+    </button>
+
+    <button
+      onclick="
+      playGame('kertas');
+        "
+    >
+      Kertas
+    </button>
+
+    <button
+      onclick="
+      playGame('gunting')
+        "
+    >
+      Gunting
+    </button>
+
+    <script>
+      function playGame(playerMove) {
+        const computerMove = pickComputermove();
+
+        let result = "";
+
+        if (playerMove === "gunting") {
+          if (computerMove === "batu") {
+            result = "(kamu kalah)";
+          } else if (computerMove === "kertas") {
+            result = "(selamat kamu menang)";
+          } else if (computerMove === "gunting") {
+            result = "(seri cuy)";
+          }
+        } else if (playerMove === "kertas") {
+          if (computerMove === "batu") {
+            result = "(selamat kamu menang)";
+          } else if (computerMove === "kertas") {
+            result = "(seri cuy)";
+          } else if (computerMove === "gunting") {
+            result = "(kamu kalah)";
+          }
+        } else if (playerMove === "batu") {
+          if (computerMove === "batu") {
+            result = "(seri cuy)";
+          } else if (computerMove === "kertas") {
+            result = "(kamu kalah)";
+          } else if (computerMove === "gunting") {
+            result = "(selamat kamu menang)";
+          }
+        }
+
+        console.log(
+          alert(
+            `kamu memilih ${playerMove}. dan komputer memilih ${computerMove}. ${result}`
+          )
+        );
+      }
+
+      function pickComputermove() {
+        const randomNumber = Math.random();
+        let computerMove = "";
+
+        if (randomNumber >= 0 && randomNumber < 1 / 3) {
+          computerMove = "batu";
+        } else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
+          computerMove = "kertas";
+        } else if (randomNumber >= 2 / 3 && randomNumber < 1) {
+          computerMove = "gunting";
+        }
+
+        return computerMove;
+      }
+    </script>
+  </body>
+</html>
