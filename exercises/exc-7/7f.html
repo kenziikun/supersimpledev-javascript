@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>belajar function</title>
+  </head>
+
+  <body>
+    <script>
+      function convertToFahrenheit(celcius) {
+        return (celcius * 9) / 5 + 32;
+      }
+
+      function convertToCelcius(fahrenheit) {
+        return ((fahrenheit - 32) * 5) / 9;
+      }
+
+      function convertTemperature(degrees, unit) {
+        if (unit === "c") {
+          const result = convertToFahrenheit(degrees);
+          return `${result}f`;
+        } else if (unit === "f") {
+          const result = convertToCelcius(degrees);
+          return `${result}c`;
+        }
+      }
+
+      console.log(convertTemperature(25, "c"));
+      console.log(convertTemperature(86, "f"));
+    </script>
+  </body>
+</html>
