@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>belajar function dan object</title>
+  </head>
+
+  <body>
+    <script>
+      function isSameProduct(product1, product2) {
+        if (
+          product1.name === product2.name &&
+          product1.price === product2.price
+        ) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      const product1 = {
+        name: "baju",
+        price: 2000,
+      };
+      const product2 = {
+        name: "celana",
+        price: 2000,
+      };
+
+      console.log(isSameProduct(product1, product2));
+    </script>
+  </body>
+</html>
